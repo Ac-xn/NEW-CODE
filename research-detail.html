@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper - ADZU Research Archive</title>
+    <link rel="stylesheet" href="research-detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <div class="imgL">
+                <img src="Photos/shs_logo.png" alt="shs" class="shslogo">
+            </div>
+            <div id="Header_Head">
+                <a href="main.html" class="shsP">ADZU SHS Research Hub</a>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="nav-menu">
+                <button class="menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="menu-content">
+                    <a href="main.html">Home</a>
+                    <a href="guidelines.html">Guidelines</a>
+                    <a href="login.html" class="login-btn">Login</a>
+                </div>
+            </div>
+            <div class="img">
+                <img src="Photos/main_logo.png" alt="ADZU Logo">   
+            </div>
+        </div>
+    </header>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="window.location.href='results.html'">
+        <i class="fas fa-arrow-left"></i>
+        Back to Results
+    </button>
+
+    <!-- Research Paper Details -->
+    <div class="research-container">
+        <div class="research-header">
+            <div class="field-info">
+                <span>Strand: <strong id="research-strand"></strong></span>
+            </div>
+            <div class="access-info">
+                <i class="fas fa-calendar-alt"></i>
+                <span class="publication-date" id="publication-date"></span>
+            </div>
+        </div>
+
+        <div class="research-content">
+            <h1 class="research-title" id="research-title"></h1>
+            
+            <div class="author-info">
+                <h3>Author:</h3>
+                <p id="research-author"></p>
+            </div>
+
+            <div class="abstract-section">
+                <h3>Abstract</h3>
+                <p id="research-abstract"></p>
+            </div>
+
+            <div class="keywords-section">
+                <h3>Keywords</h3>
+                <div class="keyword-tags" id="research-keywords"></div>
+            </div>
+
+            <div class="research-metadata">
+                <div class="action-buttons">
+                    <button class="btn-download" onclick="viewPDF()">
+                        <i class="fas fa-file-pdf"></i>
+                        View PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const researchData = JSON.parse(sessionStorage.getItem('selectedResearch'));
+            
+            if (researchData) {
+                // Update basic research information
+                document.getElementById('research-title').textContent = researchData.title;
+                document.getElementById('research-author').textContent = researchData.author;
+                document.getElementById('publication-date').textContent = researchData.year;
+                document.getElementById('research-strand').textContent = researchData.strand;
+                
+                // Update abstract
+                document.getElementById('research-abstract').textContent = researchData.abstract;
+
+                // Update keywords
+                if (researchData.keywords && Array.isArray(researchData.keywords)) {
+                    const keywordsContainer = document.getElementById('research-keywords');
+                    keywordsContainer.innerHTML = researchData.keywords
+                        .map(keyword => `<span class="keyword-tag">${keyword}</span>`)
+                        .join('');
+                }
+                
+                // Update page title
+                document.title = `${researchData.title} - ADZU Research Archive`;
+            } else {
+                window.location.href = 'results.html';
+            }
+        });
+
+        function viewPDF() {
+            const researchData = JSON.parse(sessionStorage.getItem('selectedResearch'));
+            if (researchData && researchData.pdfPath) {
+                window.open(researchData.pdfPath, '_blank');
+            }
+        }
+    </script>
+</body>
+</html> 

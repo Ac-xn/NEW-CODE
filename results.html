@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - ADZU Research Archive</title>
+    <link rel="stylesheet" href="results.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <div class="imgL">
+                <img src="Photos/shs_logo.png" alt="shs" class="shslogo">
+            </div>
+            <div id="Header_Head">
+                <a href="main.html" class="shsP">ADZU SHS Research Hub</a>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="nav-menu">
+                <button class="menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="menu-content">
+                    <a href="main.html">Home</a>
+                    <a href="guidelines.html">Guidelines</a>
+                    <a href="login.html" class="login-btn">Login</a>
+                </div>
+            </div>
+            <div class="img">
+                <img src="Photos/main_logo.png" alt="ADZU Logo">   
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Bar with Autocomplete -->
+    <div class="search-bar-results">
+        <form class="search-form" action="#" method="get">
+            <div class="search-input-container">
+                <input type="text" name="query" id="searchQuery" placeholder="Search research..." required>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
+            <button type="submit" aria-label="Search">
+                <i class="fas fa-search"></i> Search
+            </button>
+        </form>
+    </div>
+
+    <!-- Search Filters -->
+    <div class="search-filters">
+        <div class="filter-group">
+            <label for="strandFilter">Strand:</label>
+            <select id="strandFilter">
+                <option value="">All Strands</option>
+                <option value="STEM">STEM</option>
+                <option value="HUMMS">HUMMS</option>
+                <option value="ABM">ABM</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="methodologyFilter">Methodology:</label>
+            <select id="methodologyFilter">
+                <option value="">All Methodologies</option>
+                <option value="qualitative">Qualitative</option>
+                <option value="quantitative">Quantitative</option>
+                <option value="mixed">Mixed Methods</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="yearFilter">Year:</label>
+            <select id="yearFilter">
+                <option value="">All Years</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="sortFilter">Sort By:</label>
+            <select id="sortFilter">
+                <option value="relevance">Relevance</option>
+                <option value="recent">Recently Uploaded</option>
+                <option value="oldest">Oldest First</option>
+                <option value="newest">Newest First</option>
+            </select>
+        </div>
+        
+        <button id="applyFilters" class="apply-filters-btn">
+            <i class="fas fa-filter"></i> Apply Filters
+        </button>
+    </div>
+
+    <!-- Search Results Section -->
+    <div class="results-container">
+        <h2>Search Results</h2>
+        <!-- Results will be rendered here dynamically -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="result.js"></script>
+</body>
+</html>

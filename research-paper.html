@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper - AdZU SHS Digital Archive</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="research-paper.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <div class="imgL">
+                <img src="Photos/shs_logo.png" alt="shs" class="shslogo">
+            </div>
+            <div id="Header_Head">
+                <a href="main.html" class="shsP">ADZU SHS Research Hub</a>
+            </div>
+        </div>
+        <div class="img">
+            <img src="Photos/main_logo.png" alt="ADZU Logo">   
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="research-paper-container">
+        <div class="container">
+            <!-- Back Button -->
+            <div class="back-section">
+                <a href="results.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Search Results
+                </a>
+            </div>
+
+            <!-- Research Paper Header -->
+            <div class="paper-header">
+                <h1 id="paperTitle">Research Paper Title</h1>
+                <div class="paper-meta">
+                    <div class="meta-item">
+                        <strong>Author(s):</strong>
+                        <span id="paperAuthors">Author names</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Year:</strong>
+                        <span id="paperYear">2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Strand:</strong>
+                        <span id="paperStrand">STEM</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Methodology:</strong>
+                        <span id="paperMethodology">Quantitative</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abstract Section -->
+            <div class="paper-section">
+                <h2>Abstract</h2>
+                <p id="paperAbstract">Abstract content will be loaded here...</p>
+            </div>
+
+            <!-- Keywords Section -->
+            <div class="paper-section">
+                <h2>Keywords</h2>
+                <div class="keywords-container" id="paperKeywords">
+                    <!-- Keywords will be populated here -->
+                </div>
+            </div>
+
+            <!-- File Preview Section -->
+            <div class="paper-section">
+                <h2>Document Preview</h2>
+                <div class="file-preview-container">
+                    <div class="pdf-viewer" id="pdfViewer">
+                        <div class="pdf-placeholder">
+                            <i class="fas fa-file-pdf"></i>
+                            <p>PDF Preview</p>
+                            <p class="file-info">Click to view full document</p>
+                        </div>
+                    </div>
+                    <div class="file-actions">
+                        <button class="download-btn" id="downloadBtn">
+                            <i class="fas fa-download"></i>
+                            Download PDF
+                        </button>
+                        <button class="view-full-btn" id="viewFullBtn">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Full Document
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Details Section -->
+            <div class="paper-section">
+                <h2>Additional Details</h2>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>File Size:</strong>
+                        <span id="fileSize">2.5 MB</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Pages:</strong>
+                        <span id="pageCount">15</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Upload Date:</strong>
+                        <span id="uploadDate">January 15, 2024</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Category:</strong>
+                        <span id="category">Research Study</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PDF Modal for Full View -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Research Paper</h3>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe id="pdfFrame" src="" width="100%" height="600px"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="search.js"></script>
+    <script src="research-paper.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guidelines - ADZU Research Archive</title>
+    <link rel="stylesheet" href="guidelines.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <div class="imgL">
+                <img src="Photos/shs_logo.png" alt="shs" class="shslogo">
+            </div>
+            <div id="Header_Head">
+                <a href="main.html" class="shsP">ADZU SHS Research Hub</a>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="nav-menu">
+                <button class="menu-button" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menuContent">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="menu-content" id="menuContent" tabindex="-1">
+                    <a href="main.html">Home</a>
+                    <a href="guidelines.html">Guidelines</a>
+                    <a href="login.html" class="login-btn">Login</a>
+                </div>
+            </div>
+            <div class="img">
+                <img src="Photos/main_logo.png" alt="ADZU Logo">   
+            </div>
+        </div>
+    </header>
+    <script>
+    // Hamburger menu toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const menuContent = document.getElementById('menuContent');
+    hamburgerBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+        hamburgerBtn.setAttribute('aria-expanded', !expanded);
+        menuContent.style.display = expanded ? 'none' : 'block';
+        if (!expanded) menuContent.focus();
+    });
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!menuContent.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+            hamburgerBtn.setAttribute('aria-expanded', false);
+            menuContent.style.display = 'none';
+        }
+    });
+    // Close menu on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            hamburgerBtn.setAttribute('aria-expanded', false);
+            menuContent.style.display = 'none';
+        }
+    });
+    </script>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="window.location.href='main.html'">
+        <i class="fas fa-arrow-left"></i>
+        Back to Home
+    </button>
+
+    <!-- Guidelines Content -->
+    <div class="guidelines-container">
+        <h1>AdZU SHS Research Archive Website Guidelines</h1>
+
+        <section class="guidelines-section">
+            <h2>Purpose of the Website</h2>
+            <p>This website serves as the official digital archive for research outputs produced by Senior High School students of Ateneo de Zamboanga University. It aims to:</p>
+            <ul>
+                <li>Provide a centralized platform for storing and showcasing student research.</li>
+                <li>Encourage knowledge sharing and academic collaboration within the AdZU community.</li>
+                <li>Preserve and promote scholarly output from AdZU SHS.</li>
+            </ul>
+        </section>
+
+        <section class="guidelines-section">
+            <h2>Access and Authentication</h2>
+            <h3>AdZU Account Requirement</h3>
+            <ul>
+                <li>Use the @adzu.edu.ph email address to access or download research files.</li>
+            </ul>
+
+            <h3>Account Verification</h3>
+            <ul>
+                <li>Guests and external users will be able to see the research files abstract but will not be permitted to access full research documents.</li>
+            </ul>
+        </section>
+
+        <section class="guidelines-section">
+            <h2>Uploading and Archiving</h2>
+            <h3>Submission Protocol</h3>
+            <ul>
+                <li>Research outputs must be submitted in PDF format, accompanied by metadata: title, author(s), strand, school year, and abstract.</li>
+                <li>All files must be approved by an SHS Research Coordinator or Faculty Adviser before they are published.</li>
+            </ul>
+
+            <h3>File Organization</h3>
+            <ul>
+                <li>Research papers will be categorized by:
+                    <ul>
+                        <li>Strand (e.g., STEM, ABM, HUMSS, GAS)</li>
+                        <li>Academic Year</li>
+                        <li>Type of Output (e.g., Capstone Project, Action Research)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>File Naming Convention</h3>
+            <ul>
+                <li>Use the format: YEAR_STRAND_LASTNAME_TITLE.pdf
+                    <ul>
+                        <li>Example: 2025_STEM_DelaCruz_ClimateChangeMitigation.pdf</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="guidelines-section">
+            <h2>Browsing and Searching</h2>
+            <h3>Search Filters</h3>
+            <ul>
+                <li>Users can filter by:
+                    <ul>
+                        <li>Strand</li>
+                        <li>Academic Year</li>
+                        <li>Keywords or Tags</li>
+                        <li>Research Title or Author</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Abstract View</h3>
+            <ul>
+                <li>Users can preview the research abstract before accessing the full document.</li>
+            </ul>
+        </section>
+
+        <section class="guidelines-section">
+            <h2>Downloading and Usage Policy</h2>
+            <h3>Download Restrictions</h3>
+            <ul>
+                <li>Only AdZU users can download files. An AdZU email login is required for every download session.</li>
+            </ul>
+
+            <h3>Academic Integrity</h3>
+            <ul>
+                <li>Users must NOT plagiarize, alter, or misuse the research content.</li>
+                <li>Proper citation is mandatory when using the work for academic or reference purposes.</li>
+            </ul>
+
+            <h3>Citation Format (Recommended)</h3>
+            <p>Lastname, Firstname. (Year). Title of the Research. Ateneo de Zamboanga University SHS Research Archive.</p>
+        </section>
+
+        <section class="guidelines-section">
+            <h2>Maintenance and Updates</h2>
+            <h3>Content Review</h3>
+            <ul>
+                <li>The archive will be periodically reviewed for outdated or incorrect files.</li>
+                <li>Authors can request updates or takedowns by emailing the SHS Research Office.</li>
+            </ul>
+
+            <h3>System Maintenance</h3>
+            <ul>
+                <li>Scheduled maintenance will be announced via the AdZU portal or email.</li>
+                <li>The system will have regular backups to ensure data security.</li>
+            </ul>
+        </section>
+
+        <section class="guidelines-section">
+            <h2>Prohibited Use</h2>
+            <ul>
+                <li>Sharing research files outside the AdZU network without permission.</li>
+                <li>Using archived research for commercial gain or without attribution.</li>
+                <li>Tampering with, modifying, or misrepresenting student work.</li>
+            </ul>
+        </section>
+
+        <section class="guidelines-section">
+            <h2>Contact and Support</h2>
+            <p>For questions or technical support, email: <a href="mailto:shsresearch@adzu.edu.ph">shsresearch@adzu.edu.ph</a></p>
+            <p>For access issues, contact: <a href="mailto:itsupport@adzu.edu.ph">itsupport@adzu.edu.ph</a></p>
+            <p class="note">Note: These are example email addresses for demonstration purposes only.</p>
+        </section>
+    </div>
+
+    <!-- Development Note -->
+    <div class="development-note">
+        <p>⚠️ This website is currently under development. Some features may not be fully functional.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="version-footer">
+        <p>Website Version: v1.0</p>
+        <p>(Initial version prepared for review.)</p>
+    </footer>
+</body>
+</html> 
